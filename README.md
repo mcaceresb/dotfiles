@@ -18,9 +18,9 @@ git clone git@bitbucket.org:mcaceresb/dotfiles.git
 Then place a symbolic link in the home folder for each file
 
 ```bash
-ln -s ./Rprofile ~/.Rprofile
-ln -s ./gitconfig ~/.gitconfig
-ln -s ./gitignore ~/.gitignore_global
+ln -s $PROJECTS/code/201505_dotfiles/Rprofile ~/.Rprofile
+ln -s $PROJECTS/code/201505_dotfiles/gitconfig ~/.gitconfig
+ln -s $PROJECTS/code/201505_dotfiles/gitignore ~/.gitignore_global
 ```
 
 For `bashrc`, run
