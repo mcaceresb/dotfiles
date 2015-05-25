@@ -1,0 +1,9 @@
+[user]
+	email = mauricio.caceres.bravo@gmail.com
+	name = Mauricio Caceres
+	editor = vim
+[core]
+	editor = vim
+	excludesfile = /home/mauricio/.gitignore_global
+[push]
+	default = simple
