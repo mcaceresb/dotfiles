@@ -7,3 +7,12 @@
 	excludesfile = /home/mauricio/.gitignore_global
 [push]
 	default = simple
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	logs = log --decorate --oneline --all
+	pusha = push -u origin --all
+	pusht = push -u origin --tags

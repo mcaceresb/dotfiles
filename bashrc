@@ -75,4 +75,5 @@ alias catcopy='xsel --clipboard --input'
 alias catpaste='xsel --clipboard --output'
 alias catshred='shred -zuv'
 alias catrsync='rsync -arhlvv --progress --update'
+alias catgitpush='git push -u origin --all && git push -u origin --tags'
 
