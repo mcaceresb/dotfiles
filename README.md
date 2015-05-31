@@ -21,6 +21,7 @@ Then place a symbolic link in the home folder for each file
 ln -s $PROJECTS/code/201505_dotfiles/Rprofile ~/.Rprofile
 ln -s $PROJECTS/code/201505_dotfiles/gitconfig ~/.gitconfig
 ln -s $PROJECTS/code/201505_dotfiles/gitignore ~/.gitignore_global
+ln -s $PROJECTS/code/201505_dotfiles/pythonrc.py ~/.pythonrc
 ```
 
 For `bashrc`, run
@@ -32,5 +33,6 @@ cat ./bashrc >> ~/.bashrc
 
 ## Todo
 
-Figure out whether to put dotvim here
+* Figure out whether to put dotvim here
+* Figure out whether to keep `pythonrc.py`
 
