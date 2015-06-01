@@ -101,6 +101,9 @@ fi
 #----------------------------------------------------------------------
 # Add to bottom of system default bashrc
 
+# Par init
+export PARINIT=rTbgqR\ B\=.\,\?_A_a\ Q\=_s\>\|
+
 # Path to projects
 export PROJECTS=/home/mauricio/Documents/projects
 

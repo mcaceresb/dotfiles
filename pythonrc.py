@@ -5,5 +5,5 @@ import rlcompleter
 import readline
 
 readline.parse_and_bind("tab: complete")
-execfile('/home/mauricio/Documents/projects/code/functions.py')
+execfile('/home/mauricio/Documents/projects/code/snippets/functions.py')
 
