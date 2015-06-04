@@ -180,3 +180,6 @@ alias catshred='shred -zuv'
 alias catrsync='rsync -arhlvv --progress --update'
 alias catgitpush='git push -u origin --all && git push -u origin --tags'
 
+alias ag='ag --color-match="1;3;35" --color-line-number="32" --color-path="3;32;1" --column --stats -S'
+alias agc='ag --color-match="1;3;35" --color-line-number="32" --color-path="3;32;1" --column --stats -S -C 2'
+alias agrep='ag --color-match="1;3;31" --color-line-number="32" --color-path="35" --noheading --column -S'
