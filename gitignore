@@ -1,14 +1,14 @@
-*.acn
-*.acr
+*~
+.\#*
+\#**\#
+*.ac[nr]
 *.alg
 *.aux
 *.bbl
 *.blg
 *.dvi
 *.fdb_latexmk
-*.glg
-*.glo
-*.gls
+*.gl[gos]
 *.idx
 *.ilg
 *.ind
@@ -24,6 +24,7 @@
 *.out
 *.pdfsync
 *.ps
+*.pyc
 *.ptc
 *.snm
 *.synctex.gz
@@ -31,6 +32,6 @@
 *.vrb
 *.xdy
 *.tdo
-*.swp
+*.sw[op]
 *.gnuplot
 *.directory

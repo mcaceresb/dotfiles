@@ -13,7 +13,7 @@
 	ci      = commit
 	st      = status
 	unstage = reset HEAD --
-	logs    = log --decorate --oneline --all
+	logs    = log --decorate --oneline --all --graph
 	pusha   = push -u origin --all
 	pusht   = push -u origin --tags
     tags    = tag -ln
