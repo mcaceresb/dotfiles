@@ -1,10 +1,10 @@
 [user]
-	email = mauricio.caceres.bravo@gmail.com
-	name = Mauricio Caceres
+	email = CausalMind@gmail.com
+	name = CausalMind
 	editor = vim
 [core]
 	editor = vim
-	excludesfile = /home/mauricio/.gitignore_global
+	excludesfile = /home/causalmind/.gitignore_global
 [push]
 	default = simple
 [alias]

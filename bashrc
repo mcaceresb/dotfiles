@@ -1,117 +1,54 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# ---------------------------------------------------------------------
+# Already here
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+[[ $- != *i* ]] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+PS1='[\u@\h \W]\$ '
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+# ---------------------------------------------------------------------
+# Basics
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# Par init
+export PARINIT=rTbgqR\ B\=.\,\?_A_a\ Q\=_s\>\|
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+# Some color in your life
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # some more ls aliases
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-#    . /etc/bash_completion
-#fi
-
 #----------------------------------------------------------------------
-# Add to bottom of system default bashrc
+# My stuff
 
-# Par init
-export PARINIT=rTbgqR\ B\=.\,\?_A_a\ Q\=_s\>\|
-
-# Path to projects
-export PROJECTS=/home/mauricio/Documents/projects
+# Aliases
+alias ack='ack --color-match=bright_red --color-line=green'
+alias ag='ag --color-match="1;3;35" --color-line-number="32" --color-path="3;32;1" --column -S'
+alias agc='ag --color-match="1;3;35" --color-line-number="32" --color-path="3;32;1" --column --stats -S -C 2'
+alias agrep='ag --color-match="1;3;31" --color-line-number="32" --color-path="35" --noheading --column -S'
+alias rcp='rsync --progress --size-only --inplace --verbose'
+alias vlch='vlc --extraint http'
+# alias todom='vim -g $todo'
+# alias todod='vim -g $doyle/progress/todo.md'
 
 # Shortcut to startup pythonrc
-export PYTHONSTARTUP=~/.pythonrc
+# export PYTHONSTARTUP=~/.pythonrc
 
 # Set PATH
-PATH=$PATH:/usr/local/MATLAB/R2014b/bin/:/usr/local/stata/:$PROJECTS/code/bin/
+# PATH=$PATH:/home/mauricio/Downloads/large/MATLAB/R2014b/bin/:/usr/local/stata/:$PROJECTS/code/bin/
+
+# Functions
+# ---------
 
 # Shortcut to play music from terminal
 function mcplay() {
@@ -151,17 +88,17 @@ function say() {
     rm /tmp/__temppico__.wav
 }
 
-# Start vlc as server
-alias vlch='vlc --extraint http'
-
 # Cat aliases. Named for fun but some are useful
+# ----------------------------------------------
+
 alias catssd='sudo smartctl -a /dev/sdb1 | less'
 alias cathdd='sudo smartctl -a /dev/sda1 | less'
 alias catspace='du -Sm | sort -rn | less'
 alias catping='ping www.google.com'
-alias catwants='sudo apt-get -y install'
-alias cathates='sudo apt-get -y remove'
-alias catsearch='aptitude search'
+alias catwants='pacaur -S --needed --noconfirm'
+alias cathates='pacaur -R --noconfirm'
+alias catupgrade='pacaur -Syu --needed'
+alias catsearch='pacaur -Ss'
 alias catedit='vimw'
 alias catunpack='unp'
 alias catsync='rsync -arhlvv --progress'
@@ -180,6 +117,45 @@ alias catshred='shred -zuv'
 alias catrsync='rsync -arhlvv --progress --update'
 alias catgitpush='git push -u origin --all && git push -u origin --tags'
 
-alias ag='ag --color-match="1;3;35" --color-line-number="32" --color-path="3;32;1" --column --stats -S'
-alias agc='ag --color-match="1;3;35" --color-line-number="32" --color-path="3;32;1" --column --stats -S -C 2'
-alias agrep='ag --color-match="1;3;31" --color-line-number="32" --color-path="35" --noheading --column -S'
+# ---------------------------------------------------------------------
+# Paths
+
+# added by Anaconda2 2.4.1 installer
+# export PATH="/home/mauricio/anaconda2/bin:$PATH"
+# export PATH=/home/mauricio/anaconda3/bin:$PATH
+# export PATH=/home/mauricio/Downloads/chris/infrep:$PATH
+
+# Path to projects
+# export doyle=/home/mauricio/Documents/projects/ra/doyle
+# export todo=/home/mauricio/Downloads/zznow/todo.md
+export install=/home/mauricio/Documents/all/99-install/install-arch.md
+export projects=/home/mauricio/Documents/projects
+export dotvim=/home/mauricio/Documents/code/dotvim
+export mbin=/home/mauricio/Documents/code/bin
+export mlib=/home/mauricio/Documents/code/lib
+
+export gems=/home/mauricio/.gem/ruby/2.3.0/bin
+if [ -d "$gems" ]; then
+    export PATH=$gem:$PATH
+fi
+
+if [ -d "$mbin" ]; then
+    export PATH=$mbin:$PATH
+fi
+
+if [ -d "/usr/local/stata" ]; then
+    export PATH=/usr/local/stata:$PATH
+fi
+
+# ---------------------------------------------------------------------
+# History
+
+# Avoid duplicates
+export HISTCONTROL=ignoredups
+export HISTFILESIZE=8192
+
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
