@@ -76,7 +76,7 @@ function catdecrypt() {
     openssl aes-256-cbc -d -in $1.enc -out $1
 }
 
-#Speech!
+# Speech!
 function catspeak() {
     pico2wave -l=en-GB -w=/tmp/__temppico__.wav "$1"
     aplay /tmp/__temppico__.wav
@@ -86,6 +86,15 @@ function say() {
     pico2wave -l=en-GB -w=/tmp/__temppico__.wav "$1"
     aplay /tmp/__temppico__.wav
     rm /tmp/__temppico__.wav
+}
+
+# NFS
+function catnfs() {
+    if [ "$1" == "on" ]; then
+        sudo mount -t nfs 192.168.1.3:/videos /home/mauricio/Videos
+    else
+        sudo umount /home/mauricio/Videos
+    fi
 }
 
 # Cat aliases. Named for fun but some are useful
@@ -117,6 +126,8 @@ alias catshred='shred -zuv'
 alias catrsync='rsync -arhlvv --progress --update'
 alias catgitpush='git push -u origin --all && git push -u origin --tags'
 
+alias catborg='borg create --stats --progress --verbose --compression lz4'
+
 # ---------------------------------------------------------------------
 # Paths
 
@@ -128,7 +139,7 @@ alias catgitpush='git push -u origin --all && git push -u origin --tags'
 # Path to projects
 # export doyle=/home/mauricio/Documents/projects/ra/doyle
 # export todo=/home/mauricio/Downloads/zznow/todo.md
-export install=/home/mauricio/Documents/all/99-install/install-arch.md
+export install=/home/mauricio/Documents/code/lib/install-arch.md
 export projects=/home/mauricio/Documents/projects
 export dotvim=/home/mauricio/Documents/code/dotvim
 export mbin=/home/mauricio/Documents/code/bin

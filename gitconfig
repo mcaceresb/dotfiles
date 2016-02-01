@@ -1,10 +1,10 @@
 [user]
-	email = CausalMind@gmail.com
-	name = CausalMind
+	email = mauricio.caceres.bravo@gmail.com
+	name = Mauricio Caceres
 	editor = vim
 [core]
 	editor = vim
-	excludesfile = /home/causalmind/.gitignore_global
+	excludesfile = /home/mauricio/.gitignore_global
 [push]
 	default = simple
 [alias]
@@ -17,3 +17,5 @@
 	pusha   = push -u origin --all
 	pusht   = push -u origin --tags
     tags    = tag -ln
+[credential]
+	helper = cache --timeout=600
