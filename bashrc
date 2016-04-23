@@ -127,6 +127,7 @@ alias catrsync='rsync -arhlvv --progress --update'
 alias catgitpush='git push -u origin --all && git push -u origin --tags'
 
 alias catborg='borg create --stats --progress --verbose --compression lz4'
+alias catredmine='cd /usr/share/webapps/redmine && bundle exec rails server webrick -e production'
 
 # ---------------------------------------------------------------------
 # Paths
@@ -137,8 +138,8 @@ alias catborg='borg create --stats --progress --verbose --compression lz4'
 # export PATH=/home/mauricio/Downloads/chris/infrep:$PATH
 
 # Path to projects
-# export doyle=/home/mauricio/Documents/projects/ra/doyle
 # export todo=/home/mauricio/Downloads/zznow/todo.md
+export doyle=/home/mauricio/Documents/projects/ra/doyle/projects
 export install=/home/mauricio/Documents/code/lib/install-arch.md
 export projects=/home/mauricio/Documents/projects
 export dotvim=/home/mauricio/Documents/code/dotvim
@@ -147,16 +148,27 @@ export mlib=/home/mauricio/Documents/code/lib
 
 export gems=/home/mauricio/.gem/ruby/2.3.0/bin
 if [ -d "$gems" ]; then
-    export PATH=$gem:$PATH
+    export PATH=$gems:$PATH
 fi
+
+export rootgems=/root/.gem/ruby/2.3.0/bin
+# if [ -d "$rootgems" ]; then
+#     export PATH=$rootgems:$PATH
+# fi
 
 if [ -d "$mbin" ]; then
     export PATH=$mbin:$PATH
 fi
 
-if [ -d "/usr/local/stata" ]; then
-    export PATH=/usr/local/stata:$PATH
-fi
+# For whatever reason, having Stata in my path messes up my install
+
+# if [ -d "/usr/local/stata" ]; then
+#     export PATH=/usr/local/stata:$PATH
+# fi
+
+# if [ -d "/home/mauricio/Downloads/large/programs/stata" ]; then
+#     export PATH=$PATH:home/mauricio/Downloads/large/programs/stata
+# fi
 
 # ---------------------------------------------------------------------
 # History

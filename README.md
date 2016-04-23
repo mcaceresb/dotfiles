@@ -3,6 +3,7 @@
 This directory will have all my dot (.) files that specify program preferences.
 
 * bashrc for bash aliases/functions
+* bashrc for fish aliases/functions
 * Rprofile for R options
 * gitconfig, gitignore for git
 * pythonrc, python startup
@@ -16,6 +17,7 @@ ln -s $DOTFILES/gitignore ~/.gitignore_global
 ln -s $DOTFILES/gitconfig ~/.gitconfig
 ln -s $DOTFILES/Rprofile ~/.Rprofile
 ln -s $DOTFILES/bashrc ~/.bashrc
+ln -s $DOTFILES/fishrc ~/.config/fish/config.fish
 ln -s $DOTFILES/pythonrc.py ~/.pythonrc
 ```
 
