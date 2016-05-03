@@ -147,21 +147,23 @@ export mbin=/home/mauricio/Documents/code/bin
 export mlib=/home/mauricio/Documents/code/lib
 
 export gems=/home/mauricio/.gem/ruby/2.3.0/bin
-if [ -d "$gems" ]; then
-    export PATH=$gems:$PATH
-fi
+# if [ -d "$gems" ]; then
+#     export PATH=$gems:$PATH
+# fi
 
 export rootgems=/root/.gem/ruby/2.3.0/bin
 # if [ -d "$rootgems" ]; then
 #     export PATH=$rootgems:$PATH
 # fi
 
-if [ -d "$mbin" ]; then
-    export PATH=$mbin:$PATH
-fi
+# if [ -d "$mbin" ]; then
+#     export PATH=$mbin:$PATH
+# fi
+
+npm config set prefix '~/.npm-global'
+# export PATH=~/.npm-global/bin:$PATH
 
 # For whatever reason, having Stata in my path messes up my install
-
 # if [ -d "/usr/local/stata" ]; then
 #     export PATH=/usr/local/stata:$PATH
 # fi

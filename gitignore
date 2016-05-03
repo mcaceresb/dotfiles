@@ -5,6 +5,7 @@
 .~*
 .\#*
 \#**\#
+writeup/**.log
 code/**.log
 .~lock.*#
 *.tmp
@@ -16,7 +17,6 @@ code/**.log
 *.tabcount
 *.figcount
 *.zip
-writeup/**.log
 
 # ---------------------------------------------------------------------
 # Python
