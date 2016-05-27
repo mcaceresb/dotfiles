@@ -25,7 +25,7 @@ if (interactive()){
 					   ,error=c(1, 15))
 
 	# Output color scheme for black terminal
-	setOutputColors256 (normal = 122
+	setOutputColors256 (normal = 255 # 122
 						,number = 208
 						,string = 246
 						,const = 35

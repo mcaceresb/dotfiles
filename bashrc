@@ -50,6 +50,11 @@ alias vlch='vlc --extraint http'
 # Functions
 # ---------
 
+# shorthand for apparent size in du
+function mdu() {
+    du -h $1 --apparent-size --max-depth=0
+}
+
 # Shortcut to play music from terminal
 function mcplay() {
     mplayer -msgcolor -gapless-audio -shuffle -playlist "$HOME/Music/Playlists/$1"
@@ -160,7 +165,7 @@ export rootgems=/root/.gem/ruby/2.3.0/bin
 #     export PATH=$mbin:$PATH
 # fi
 
-npm config set prefix '~/.npm-global'
+# npm config set prefix '~/.npm-global'
 # export PATH=~/.npm-global/bin:$PATH
 
 # For whatever reason, having Stata in my path messes up my install
@@ -184,3 +189,8 @@ shopt -s histappend
 
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
+export NVM_DIR="/home/mauricio/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

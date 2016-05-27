@@ -6,6 +6,7 @@
 .\#*
 \#**\#
 writeup/**.log
+out/
 code/**.log
 .~lock.*#
 *.tmp
