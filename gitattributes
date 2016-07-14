@@ -30,7 +30,10 @@
 *.sql      text
 
 # Data
-*.dta  binary
+*.dta   binary
+*.jld   binary
+*.h5    binary
+*.RData binary
 
 # Graphics
 *.png  binary
