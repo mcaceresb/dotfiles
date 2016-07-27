@@ -7,6 +7,7 @@ This directory will have all my dot (.) files that specify program preferences.
 * Rprofile for R options
 * gitconfig, gitignore for git
 * pythonrc, python startup
+* Xresources, xterm options
 
 ## Setup
 
@@ -19,6 +20,7 @@ ln -s $DOTFILES/Rprofile ~/.Rprofile
 ln -s $DOTFILES/bashrc ~/.bashrc
 ln -s $DOTFILES/fishrc ~/.config/fish/config.fish
 ln -s $DOTFILES/pythonrc.py ~/.pythonrc
+ln -s $DOTFILES/Xresources ~/.Xresources
 ```
 
 If `~/.bashrc` already exists, then `cp ~/.bashrc ~/.bashrc.bak` or `cat ./bashrc >> ~/.bashrc`.
