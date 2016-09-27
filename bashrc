@@ -157,6 +157,12 @@ export gems=/home/mauricio/.gem/ruby/2.3.0/bin
 # fi
 
 export rootgems=/root/.gem/ruby/2.3.0/bin
+
+# Home bin
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # if [ -d "$rootgems" ]; then
 #     export PATH=$rootgems:$PATH
 # fi

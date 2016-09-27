@@ -45,6 +45,13 @@ alias topme='top -c -u `whoami`'
 alias psme='ps aux | grep `whoami`'
 
 # ---------------------------------------------------------------------
+# Misc
+
+function openeml() {
+    cp "$1" .html && firefox .html && rm -f .html
+}
+
+# ---------------------------------------------------------------------
 # History
 
 # Avoid duplicates
