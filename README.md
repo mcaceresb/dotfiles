@@ -18,7 +18,6 @@ ln -s $DOTFILES/gitignore ~/.gitignore_global
 ln -s $DOTFILES/gitconfig ~/.gitconfig
 ln -s $DOTFILES/Rprofile ~/.Rprofile
 ln -s $DOTFILES/bashrc ~/.bashrc
-ln -s $DOTFILES/fishrc ~/.config/fish/config.fish
 ln -s $DOTFILES/pythonrc.py ~/.pythonrc
 ln -s $DOTFILES/Xresources ~/.Xresources
 ```
