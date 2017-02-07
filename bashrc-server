@@ -1,12 +1,35 @@
 # ---------------------------------------------------------------------
 # Server-specific settings
 
-# NBER
-# export mhome=/disk/agedisk2/medicare.work/doyle-DUA18266/caceres
-# export mbulk=/disk/agebulk1/medicare.work/doyle-DUA18266/caceres
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
 
-# afink
+# age*.nber.org
+# export mhome=/disk/agedisk2/medicare.work/doyle-DUA18266/`whoami`
+# export mbulk=/disk/agebulk1/medicare.work/doyle-DUA18266/`whoami`
+
+# afink2.mit.edu
 # export msvn=/proj/restrict/aurora/`whoami`/trunk/
+# function svnco() {
+#     if [ "$1" == "" ]; then
+#         echo 'Please specify a project'
+#     elif [ "$2" == "" ]; then
+#         echo 'Please specify a folder'
+#     else
+#         cd /proj/restrict/$1/`whoami`/trunk
+#         svn co file:///proj/restrict/$1/svn/trunk/$2 $2
+#     fi
+# }
+
+# equity.mit.edu
+# alias statado='qsub -b y -wd `pwd` -o `pwd` stata -b do'
+# alias xstata='qrsh -nostdin xstata &'
+# alias mpython='/home/caceres/python/bin/python'
+# alias mpip='/home/caceres/python/bin/pip'
+
+eval $(dircolors -b $HOME/.dircolors)
 
 # ---------------------------------------------------------------------
 # Basics
@@ -44,11 +67,9 @@ alias psg='ps -ax | grep \!* | grep -v grep'
 alias topme='top -c -u `whoami`'
 alias psme='ps aux | grep `whoami`'
 
-# ---------------------------------------------------------------------
-# Misc
-
-function openeml() {
-    cp "$1" .html && firefox .html && rm -f .html
+# check out CSV file in buffer
+function lesscsv () {
+    column -s, -t < $1 | less -#2 -N -S
 }
 
 # ---------------------------------------------------------------------

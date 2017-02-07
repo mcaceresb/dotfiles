@@ -54,6 +54,18 @@ xterm*color13: rgb:ef/9e/be
 xterm*color14: rgb:71/be/be
 xterm*color15: rgb:ff/ff/ff
 
+! Solarized Colors
+! 8 0 43 54
+! 0 7 54 66
+! 110 88 110 117
+! 11 123 131 195
+! 12 131  148 150
+! 14 147 161 161
+! 7 238 232 213
+! 15 253 246 227
+! 3 181 137 0
+
+
 ! right hand side scrollbar...
 ! xterm*rightScrollBar: true
 xterm*ScrollBar: false

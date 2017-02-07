@@ -2,11 +2,14 @@
 	email  = mauricio.caceres.bravo@gmail.com
 	name   = Mauricio Caceres
 	editor = vim
+
 [core]
 	editor = vim
 	excludesfile = /home/mauricio/.gitignore_global
+
 [push]
 	default = simple
+
 [alias]
 	co      = checkout
 	br      = branch
@@ -27,14 +30,18 @@
     logl    = log -n 1
     log1    = log --graph --decorate --all --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
     log2    = log --graph --decorate --all --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)'
+
 [credential]
 	helper = cache --timeout=600
+
 [diff "pandoc"]
     binary   = true
     textconv = pandoc --to=markdown
     prompt   = false
+
 [alias]
     wdiff = diff --word-diff=color --unified=1
 	webui = !/home/mauricio/.git-webui/release/libexec/git-core/git-webui
+
 [webui]
 	autoupdate = true
