@@ -1,0 +1,90 @@
+# ---------------------------------------------------------------------
+# Server-specific settings
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# age*.nber.org
+# export mhome=/disk/agedisk2/medicare.work/doyle-DUA18266/`whoami`
+# export mbulk=/disk/agebulk1/medicare.work/doyle-DUA18266/`whoami`
+
+# afink2.mit.edu
+# export msvn=/proj/restrict/aurora/`whoami`/trunk/
+# function svnco() {
+#     if [ "$1" == "" ]; then
+#         echo 'Please specify a project'
+#     elif [ "$2" == "" ]; then
+#         echo 'Please specify a folder'
+#     else
+#         cd /proj/restrict/$1/`whoami`/trunk
+#         svn co file:///proj/restrict/$1/svn/trunk/$2 $2
+#     fi
+# }
+
+# equity.mit.edu
+# alias statado='qsub -b y -wd `pwd` -o `pwd` stata -b do'
+# alias xstata='qrsh -nostdin xstata &'
+# alias mpython='/home/caceres/python/bin/python'
+# alias mpip='/home/caceres/python/bin/pip'
+
+eval $(dircolors -b $HOME/.dircolors)
+
+# ---------------------------------------------------------------------
+# Basics
+
+export EDITOR=vim
+export mtex=`kpsewhich -var-value=TEXMFHOME`
+
+# Options
+set noclobber
+export PROMPT_DIRTRIM=2
+PS1='[\u@\h \w]\$ '
+
+# ls and dir
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# some more ls aliases
+alias ll='ls -alFh'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Random aliases
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# PS aliases
+alias psg='ps -ax | grep \!* | grep -v grep'
+alias topme='top -c -u `whoami`'
+alias psme='ps aux | grep `whoami`'
+
+# check out CSV file in buffer
+function lesscsv () {
+    column -s, -t < $1 | less -#2 -N -S
+}
+
+# ---------------------------------------------------------------------
+# History
+
+# Avoid duplicates
+export HISTCONTROL=ignoredups
+export HISTFILESIZE=8192
+
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
+function mdu() {
+    du -h $1 --apparent-size --max-depth=0
+}
