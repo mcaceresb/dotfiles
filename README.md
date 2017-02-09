@@ -23,7 +23,6 @@ Place a symbolic link in the home folder for each file (edit the DOTFILES variab
 mkdir $HOME/lib
 cd $HOME/lib
 git clone github.com/mcaceresb/dotfiles
-export DOTFILES=$HOME/Documents/code/dotfiles
 ln -s $HOME/lib/gitignore   $HOME/.gitignore_global
 ln -s $HOME/lib/gitconfig   $HOME/.gitconfig
 ln -s $HOME/lib/Rprofile    $HOME/.Rprofile
