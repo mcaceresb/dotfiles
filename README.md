@@ -13,7 +13,7 @@ This directory will have all my dot (.) files for various program configurations
 
 ## Setup
 
-Though I totally <3 Linux, I have found the git GUI options aesthetically unpleasing. Since my git workflow is pretty simple, I favor the visually compelling. To that end, I use [git-webui](github.com/alberthier/git-webui)
+Though I totally <3 Linux, I have found the git GUI options aesthetically unpleasing. Since my git workflow is pretty simple, I favor the visually compelling. To that end, I use [git-webui](https://github.com/alberthier/git-webui)
 ```bash
 curl https://raw.githubusercontent.com/alberthier/git-webui/master/install/installer.sh | bash
 ```
@@ -22,7 +22,7 @@ Place a symbolic link in the home folder for each file (edit the DOTFILES variab
 ```bash
 mkdir $HOME/lib
 cd $HOME/lib
-git clone github.com/mcaceresb/dotfiles
+git clone https://github.com/mcaceresb/dotfiles
 ln -s $HOME/lib/gitignore   $HOME/.gitignore_global
 ln -s $HOME/lib/gitconfig   $HOME/.gitconfig
 ln -s $HOME/lib/Rprofile    $HOME/.Rprofile
